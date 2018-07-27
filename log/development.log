@@ -1,0 +1,1788 @@
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+Migrating to CreateAssemblies (20180727003735)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "assemblies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180727003735_create_assemblies.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180727003735"]]
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+Migrating to CreateParts (20180727003741)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "parts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "part_number" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180727003741_create_parts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180727003741"]]
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+Migrating to CreateAssemblyParts (20180727003933)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "assembly_parts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180727003933_create_assembly_parts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180727003933"]]
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+Migrating to AddLinkPartAssembly (20180727004038)
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "assembly_part" ADD "assembly_id" integer[0m
+  ↳ db/migrate/20180727004038_add_link_part_assembly.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+Migrating to AddLinkPartAssembly (20180727004038)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "assembly_part" ADD "assembly_id" integer[0m
+  ↳ db/migrate/20180727004038_add_link_part_assembly.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+Migrating to AddLinkPartAssembly (20180727004038)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "assembly_part" ADD "assembly_id" integer[0m
+  ↳ db/migrate/20180727004038_add_link_part_assembly.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+Migrating to AddLinkPartAssembly (20180727004038)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "assembly_part" ADD "assembly_id" integer[0m
+  ↳ db/migrate/20180727004038_add_link_part_assembly.rb:3
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[36mActiveRecord::InternalMetadata Create (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-07-27 00:55:35.305573"], ["updated_at", "2018-07-27 00:55:35.305573"]]
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+Migrating to LinkPartsAssembly (20180727005715)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.7ms)[0m  [1m[35mALTER TABLE "assembly_parts" ADD "assemblies_id" integer[0m
+  ↳ db/migrate/20180727005715_link_parts_assembly.rb:9
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20180727005715_link_parts_assembly.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_assembly_parts_on_assemblies_id" ON "assembly_parts" ("assemblies_id")[0m
+  ↳ db/migrate/20180727005715_link_parts_assembly.rb:9
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "assembly_parts" ADD "parts_id" integer[0m
+  ↳ db/migrate/20180727005715_link_parts_assembly.rb:10
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_assembly_parts_on_parts_id" ON "assembly_parts" ("parts_id")[0m
+  ↳ db/migrate/20180727005715_link_parts_assembly.rb:10
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180727005715"]]
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mAssembly Create (2.3ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Josue Littel V"], ["created_at", "2018-07-27 01:04:10.453610"], ["updated_at", "2018-07-27 01:04:10.453610"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mAssembly Create (0.5ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Todd Denesik"], ["created_at", "2018-07-27 01:04:10.460921"], ["updated_at", "2018-07-27 01:04:10.460921"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mAssembly Create (0.5ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Clinton Windler"], ["created_at", "2018-07-27 01:04:10.465326"], ["updated_at", "2018-07-27 01:04:10.465326"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mAssembly Create (0.5ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Earle Bailey III"], ["created_at", "2018-07-27 01:04:10.472119"], ["updated_at", "2018-07-27 01:04:10.472119"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mAssembly Create (0.5ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Theresa Runolfsson"], ["created_at", "2018-07-27 01:04:10.478252"], ["updated_at", "2018-07-27 01:04:10.478252"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.9ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mAssembly Create (0.4ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Bronwyn Okuneva"], ["created_at", "2018-07-27 01:04:10.484281"], ["updated_at", "2018-07-27 01:04:10.484281"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mAssembly Create (0.5ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Brandi Auer V"], ["created_at", "2018-07-27 01:04:10.488558"], ["updated_at", "2018-07-27 01:04:10.488558"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mAssembly Create (0.5ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Junior Ferry II"], ["created_at", "2018-07-27 01:04:10.492835"], ["updated_at", "2018-07-27 01:04:10.492835"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mAssembly Create (0.5ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mrs. Khadijah Ryan"], ["created_at", "2018-07-27 01:04:10.498461"], ["updated_at", "2018-07-27 01:04:10.498461"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mAssembly Create (0.5ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Jon Dibbert Jr."], ["created_at", "2018-07-27 01:04:10.503504"], ["updated_at", "2018-07-27 01:04:10.503504"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPart Create (1.6ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Federico Swift"], ["created_at", "2018-07-27 01:04:10.521697"], ["updated_at", "2018-07-27 01:04:10.521697"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPart Create (0.5ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Ling Hoeger I"], ["created_at", "2018-07-27 01:04:10.528310"], ["updated_at", "2018-07-27 01:04:10.528310"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPart Create (0.7ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Miss Dorsey Sporer"], ["created_at", "2018-07-27 01:04:10.533322"], ["updated_at", "2018-07-27 01:04:10.533322"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPart Create (0.5ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Brandy Orn"], ["created_at", "2018-07-27 01:04:10.541586"], ["updated_at", "2018-07-27 01:04:10.541586"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPart Create (0.5ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Mayra Kemmer"], ["created_at", "2018-07-27 01:04:10.546376"], ["updated_at", "2018-07-27 01:04:10.546376"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPart Create (0.5ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Sid Corwin"], ["created_at", "2018-07-27 01:04:10.550529"], ["updated_at", "2018-07-27 01:04:10.550529"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPart Create (0.5ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Rosetta Jacobson IV"], ["created_at", "2018-07-27 01:04:10.555097"], ["updated_at", "2018-07-27 01:04:10.555097"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPart Create (0.5ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Darrin Hyatt"], ["created_at", "2018-07-27 01:04:10.560373"], ["updated_at", "2018-07-27 01:04:10.560373"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPart Create (0.5ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Thaddeus Grady DVM"], ["created_at", "2018-07-27 01:04:10.573302"], ["updated_at", "2018-07-27 01:04:10.573302"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPart Create (0.4ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Abel Russel"], ["created_at", "2018-07-27 01:04:10.577113"], ["updated_at", "2018-07-27 01:04:10.577113"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[36mPart Load (0.2ms)[0m  [1m[34mSELECT  "parts".* FROM "parts" ORDER BY "parts"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPart Load (0.3ms)[0m  [1m[34mSELECT  "parts".* FROM "parts" ORDER BY "parts"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[36mPart Load (0.2ms)[0m  [1m[34mSELECT  "parts".* FROM "parts" ORDER BY "parts"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPart Load (0.2ms)[0m  [1m[34mSELECT  "parts".* FROM "parts" ORDER BY "parts"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAssembly Load (0.2ms)[0m  [1m[34mSELECT  "assemblies".* FROM "assemblies" ORDER BY "assemblies"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAssembly Load (0.2ms)[0m  [1m[34mSELECT  "assemblies".* FROM "assemblies" ORDER BY "assemblies"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mAssembly Create (0.6ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Eula Hammes"], ["created_at", "2018-07-27 01:13:23.466154"], ["updated_at", "2018-07-27 01:13:23.466154"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mAssembly Create (0.4ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Ron Krajcik IV"], ["created_at", "2018-07-27 01:13:23.470479"], ["updated_at", "2018-07-27 01:13:23.470479"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mAssembly Create (0.4ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Elvia Walker I"], ["created_at", "2018-07-27 01:13:23.474021"], ["updated_at", "2018-07-27 01:13:23.474021"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mAssembly Create (0.5ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Easter Bartoletti"], ["created_at", "2018-07-27 01:13:23.477945"], ["updated_at", "2018-07-27 01:13:23.477945"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mAssembly Create (0.5ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Michal Mosciski"], ["created_at", "2018-07-27 01:13:23.482626"], ["updated_at", "2018-07-27 01:13:23.482626"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mAssembly Create (0.4ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Soraya Berge IV"], ["created_at", "2018-07-27 01:13:23.486933"], ["updated_at", "2018-07-27 01:13:23.486933"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mAssembly Create (0.4ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Lyman Walsh"], ["created_at", "2018-07-27 01:13:23.490924"], ["updated_at", "2018-07-27 01:13:23.490924"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mAssembly Create (0.4ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Ms. Jeni Ullrich"], ["created_at", "2018-07-27 01:13:23.494483"], ["updated_at", "2018-07-27 01:13:23.494483"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mAssembly Create (0.4ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Jaclyn Reinger"], ["created_at", "2018-07-27 01:13:23.497903"], ["updated_at", "2018-07-27 01:13:23.497903"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mAssembly Create (0.5ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Trish Emard"], ["created_at", "2018-07-27 01:13:23.501814"], ["updated_at", "2018-07-27 01:13:23.501814"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPart Create (0.7ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Nga Gislason"], ["created_at", "2018-07-27 01:13:23.516342"], ["updated_at", "2018-07-27 01:13:23.516342"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPart Create (0.4ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Nickolas Von"], ["created_at", "2018-07-27 01:13:23.521005"], ["updated_at", "2018-07-27 01:13:23.521005"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPart Create (0.4ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Jaclyn O'Conner"], ["created_at", "2018-07-27 01:13:23.524730"], ["updated_at", "2018-07-27 01:13:23.524730"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPart Create (0.5ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Ola Nolan"], ["created_at", "2018-07-27 01:13:23.528496"], ["updated_at", "2018-07-27 01:13:23.528496"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPart Create (0.5ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Yessenia Murray"], ["created_at", "2018-07-27 01:13:23.532706"], ["updated_at", "2018-07-27 01:13:23.532706"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPart Create (0.4ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Brendon Schroeder"], ["created_at", "2018-07-27 01:13:23.536484"], ["updated_at", "2018-07-27 01:13:23.536484"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPart Create (0.5ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Devon Brown"], ["created_at", "2018-07-27 01:13:23.540315"], ["updated_at", "2018-07-27 01:13:23.540315"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPart Create (0.4ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Austin Rempel"], ["created_at", "2018-07-27 01:13:23.544521"], ["updated_at", "2018-07-27 01:13:23.544521"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPart Create (0.5ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Frankie Walsh"], ["created_at", "2018-07-27 01:13:23.548559"], ["updated_at", "2018-07-27 01:13:23.548559"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPart Create (0.5ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Carolin Bruen"], ["created_at", "2018-07-27 01:13:23.552502"], ["updated_at", "2018-07-27 01:13:23.552502"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.0ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mAssembly Create (0.6ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Shelton Wiegand Jr."], ["created_at", "2018-07-27 01:13:51.096952"], ["updated_at", "2018-07-27 01:13:51.096952"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mAssembly Create (0.4ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Chante Mann"], ["created_at", "2018-07-27 01:13:51.101136"], ["updated_at", "2018-07-27 01:13:51.101136"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mAssembly Create (0.4ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Eartha Stokes"], ["created_at", "2018-07-27 01:13:51.104963"], ["updated_at", "2018-07-27 01:13:51.104963"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mAssembly Create (0.7ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Avery Braun"], ["created_at", "2018-07-27 01:13:51.108454"], ["updated_at", "2018-07-27 01:13:51.108454"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mAssembly Create (0.5ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Dewayne Monahan"], ["created_at", "2018-07-27 01:13:51.112852"], ["updated_at", "2018-07-27 01:13:51.112852"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mAssembly Create (0.4ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Edgardo Purdy Jr."], ["created_at", "2018-07-27 01:13:51.117323"], ["updated_at", "2018-07-27 01:13:51.117323"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mAssembly Create (0.4ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Elaina Roob"], ["created_at", "2018-07-27 01:13:51.121417"], ["updated_at", "2018-07-27 01:13:51.121417"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mAssembly Create (0.4ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Curtis Borer Jr."], ["created_at", "2018-07-27 01:13:51.125019"], ["updated_at", "2018-07-27 01:13:51.125019"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mAssembly Create (0.4ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mrs. Ceola Kautzer"], ["created_at", "2018-07-27 01:13:51.129037"], ["updated_at", "2018-07-27 01:13:51.129037"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[36mAssembly Create (0.5ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Willena Mosciski"], ["created_at", "2018-07-27 01:13:51.133040"], ["updated_at", "2018-07-27 01:13:51.133040"]]
+  ↳ db/seeds.rb:5
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:5
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPart Create (0.5ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Augustine Rohan"], ["created_at", "2018-07-27 01:13:51.145867"], ["updated_at", "2018-07-27 01:13:51.145867"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPart Create (0.4ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Fiona Crooks"], ["created_at", "2018-07-27 01:13:51.149640"], ["updated_at", "2018-07-27 01:13:51.149640"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPart Create (0.4ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Clint Hartmann"], ["created_at", "2018-07-27 01:13:51.153342"], ["updated_at", "2018-07-27 01:13:51.153342"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPart Create (0.4ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Wynell Kozey MD"], ["created_at", "2018-07-27 01:13:51.157490"], ["updated_at", "2018-07-27 01:13:51.157490"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPart Create (0.4ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Dalene Olson"], ["created_at", "2018-07-27 01:13:51.161362"], ["updated_at", "2018-07-27 01:13:51.161362"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPart Create (0.5ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Dexter Bechtelar"], ["created_at", "2018-07-27 01:13:51.165465"], ["updated_at", "2018-07-27 01:13:51.165465"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPart Create (0.4ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Kristy Conn"], ["created_at", "2018-07-27 01:13:51.169979"], ["updated_at", "2018-07-27 01:13:51.169979"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPart Create (0.5ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Tina Connelly"], ["created_at", "2018-07-27 01:13:51.173666"], ["updated_at", "2018-07-27 01:13:51.173666"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPart Create (0.4ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Rocky Stiedemann"], ["created_at", "2018-07-27 01:13:51.177350"], ["updated_at", "2018-07-27 01:13:51.177350"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[36mPart Create (0.4ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Jerald Jakubowski"], ["created_at", "2018-07-27 01:13:51.180859"], ["updated_at", "2018-07-27 01:13:51.180859"]]
+  ↳ db/seeds.rb:9
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:9
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.2ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ db/seeds.rb:13
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (2.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+Migrating to CreateAssemblies (20180727003735)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "assemblies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180727003735_create_assemblies.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180727003735"]]
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+Migrating to CreateParts (20180727003741)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE TABLE "parts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "part_number" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180727003741_create_parts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180727003741"]]
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+Migrating to CreateAssemblyParts (20180727003933)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.6ms)[0m  [1m[35mCREATE TABLE "assembly_parts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180727003933_create_assembly_parts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180727003933"]]
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+Migrating to LinkPartsAssembly (20180727005715)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.6ms)[0m  [1m[35mALTER TABLE "assembly_parts" ADD "assembly_id" integer[0m
+  ↳ db/migrate/20180727005715_link_parts_assembly.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_assembly_parts_on_assembly_id" ON "assembly_parts" ("assembly_id")[0m
+  ↳ db/migrate/20180727005715_link_parts_assembly.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mALTER TABLE "assembly_parts" ADD "part_id" integer[0m
+  ↳ db/migrate/20180727005715_link_parts_assembly.rb:4
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_assembly_parts_on_part_id" ON "assembly_parts" ("part_id")[0m
+  ↳ db/migrate/20180727005715_link_parts_assembly.rb:4
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180727005715"]]
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (2.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[36mActiveRecord::InternalMetadata Create (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-07-27 01:28:18.636810"], ["updated_at", "2018-07-27 01:28:18.636810"]]
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.7ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Neil Spencer"], ["created_at", "2018-07-27 01:28:26.103604"], ["updated_at", "2018-07-27 01:28:26.103604"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.5ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Leonor Johnson"], ["created_at", "2018-07-27 01:28:26.108416"], ["updated_at", "2018-07-27 01:28:26.108416"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.4ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mrs. Audria Dare"], ["created_at", "2018-07-27 01:28:26.112050"], ["updated_at", "2018-07-27 01:28:26.112050"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.6ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Shaunda Schultz"], ["created_at", "2018-07-27 01:28:26.115562"], ["updated_at", "2018-07-27 01:28:26.115562"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.4ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Oswaldo Nolan"], ["created_at", "2018-07-27 01:28:26.119688"], ["updated_at", "2018-07-27 01:28:26.119688"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.4ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Nila Ratke"], ["created_at", "2018-07-27 01:28:26.123360"], ["updated_at", "2018-07-27 01:28:26.123360"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.6ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Bessie Schinner"], ["created_at", "2018-07-27 01:28:26.126845"], ["updated_at", "2018-07-27 01:28:26.126845"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.5ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mr. Lawrence Gutkowski"], ["created_at", "2018-07-27 01:28:26.131270"], ["updated_at", "2018-07-27 01:28:26.131270"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.4ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Melda Baumbach"], ["created_at", "2018-07-27 01:28:26.134860"], ["updated_at", "2018-07-27 01:28:26.134860"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.5ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Duane Borer"], ["created_at", "2018-07-27 01:28:26.138491"], ["updated_at", "2018-07-27 01:28:26.138491"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.6ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Mr. Hans Gorczany"], ["created_at", "2018-07-27 01:28:26.161332"], ["updated_at", "2018-07-27 01:28:26.161332"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.6ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Elmo Boehm"], ["created_at", "2018-07-27 01:28:26.166471"], ["updated_at", "2018-07-27 01:28:26.166471"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.6ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Jerrell Kunde"], ["created_at", "2018-07-27 01:28:26.171690"], ["updated_at", "2018-07-27 01:28:26.171690"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.5ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Mathew Wehner"], ["created_at", "2018-07-27 01:28:26.178107"], ["updated_at", "2018-07-27 01:28:26.178107"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.6ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Ceola Robel"], ["created_at", "2018-07-27 01:28:26.182718"], ["updated_at", "2018-07-27 01:28:26.182718"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.5ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Corrie Bashirian"], ["created_at", "2018-07-27 01:28:26.187702"], ["updated_at", "2018-07-27 01:28:26.187702"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.5ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Jules Cremin"], ["created_at", "2018-07-27 01:28:26.192110"], ["updated_at", "2018-07-27 01:28:26.192110"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.8ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Mayra Prohaska"], ["created_at", "2018-07-27 01:28:26.197112"], ["updated_at", "2018-07-27 01:28:26.197112"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.5ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Mr. Melba Johns"], ["created_at", "2018-07-27 01:28:26.203837"], ["updated_at", "2018-07-27 01:28:26.203837"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.4ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Nolan Reichel"], ["created_at", "2018-07-27 01:28:26.207856"], ["updated_at", "2018-07-27 01:28:26.207856"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.6ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Candelaria Parker PhD"], ["created_at", "2018-07-27 01:28:37.071648"], ["updated_at", "2018-07-27 01:28:37.071648"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (2.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.4ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Corinna Beatty"], ["created_at", "2018-07-27 01:28:37.077544"], ["updated_at", "2018-07-27 01:28:37.077544"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.4ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Dewey Roberts"], ["created_at", "2018-07-27 01:28:37.081064"], ["updated_at", "2018-07-27 01:28:37.081064"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.5ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Dr. Delores Marquardt"], ["created_at", "2018-07-27 01:28:37.085498"], ["updated_at", "2018-07-27 01:28:37.085498"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.4ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Bradley Spinka"], ["created_at", "2018-07-27 01:28:37.089572"], ["updated_at", "2018-07-27 01:28:37.089572"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.4ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Marlena Howe II"], ["created_at", "2018-07-27 01:28:37.093137"], ["updated_at", "2018-07-27 01:28:37.093137"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.5ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Santo Barrows"], ["created_at", "2018-07-27 01:28:37.096895"], ["updated_at", "2018-07-27 01:28:37.096895"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.4ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Sadie Halvorson"], ["created_at", "2018-07-27 01:28:37.100671"], ["updated_at", "2018-07-27 01:28:37.100671"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.4ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mrs. Philip Mitchell"], ["created_at", "2018-07-27 01:28:37.104111"], ["updated_at", "2018-07-27 01:28:37.104111"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.4ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Christin Hoppe"], ["created_at", "2018-07-27 01:28:37.107582"], ["updated_at", "2018-07-27 01:28:37.107582"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (1.0ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Lois Greenfelder"], ["created_at", "2018-07-27 01:28:37.120721"], ["updated_at", "2018-07-27 01:28:37.120721"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.5ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Twila Ferry Sr."], ["created_at", "2018-07-27 01:28:37.127264"], ["updated_at", "2018-07-27 01:28:37.127264"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.5ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Vivan Leffler PhD"], ["created_at", "2018-07-27 01:28:37.131568"], ["updated_at", "2018-07-27 01:28:37.131568"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.5ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Monte Beier"], ["created_at", "2018-07-27 01:28:37.135800"], ["updated_at", "2018-07-27 01:28:37.135800"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.4ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Rosalva Hauck"], ["created_at", "2018-07-27 01:28:37.139564"], ["updated_at", "2018-07-27 01:28:37.139564"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.4ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Marisha Rutherford"], ["created_at", "2018-07-27 01:28:37.142938"], ["updated_at", "2018-07-27 01:28:37.142938"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.5ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Cleta McClure IV"], ["created_at", "2018-07-27 01:28:37.146786"], ["updated_at", "2018-07-27 01:28:37.146786"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.4ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Clifton Jaskolski"], ["created_at", "2018-07-27 01:28:37.150400"], ["updated_at", "2018-07-27 01:28:37.150400"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.4ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Mrs. Nestor Waelchi"], ["created_at", "2018-07-27 01:28:37.153907"], ["updated_at", "2018-07-27 01:28:37.153907"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.5ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Candis Grady IV"], ["created_at", "2018-07-27 01:28:37.157955"], ["updated_at", "2018-07-27 01:28:37.157955"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.7ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Billye Hand"], ["created_at", "2018-07-27 01:29:48.934275"], ["updated_at", "2018-07-27 01:29:48.934275"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.5ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Tawanda Weber"], ["created_at", "2018-07-27 01:29:48.939321"], ["updated_at", "2018-07-27 01:29:48.939321"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.4ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Alexander Gerhold PhD"], ["created_at", "2018-07-27 01:29:48.943199"], ["updated_at", "2018-07-27 01:29:48.943199"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.5ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Cedrick Swift"], ["created_at", "2018-07-27 01:29:48.947497"], ["updated_at", "2018-07-27 01:29:48.947497"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.4ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Tracy Schmidt"], ["created_at", "2018-07-27 01:29:48.951904"], ["updated_at", "2018-07-27 01:29:48.951904"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.4ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Domenic Funk DVM"], ["created_at", "2018-07-27 01:29:48.955562"], ["updated_at", "2018-07-27 01:29:48.955562"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.5ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Don Quigley"], ["created_at", "2018-07-27 01:29:48.959684"], ["updated_at", "2018-07-27 01:29:48.959684"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.4ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Ms. Ernesto Mann"], ["created_at", "2018-07-27 01:29:48.963819"], ["updated_at", "2018-07-27 01:29:48.963819"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.5ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Lloyd Carroll"], ["created_at", "2018-07-27 01:29:48.967655"], ["updated_at", "2018-07-27 01:29:48.967655"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.5ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Jacinda Pacocha"], ["created_at", "2018-07-27 01:29:48.971601"], ["updated_at", "2018-07-27 01:29:48.971601"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.4ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Long Trantow"], ["created_at", "2018-07-27 01:29:48.985975"], ["updated_at", "2018-07-27 01:29:48.985975"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.4ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Herman Treutel Jr."], ["created_at", "2018-07-27 01:29:48.989806"], ["updated_at", "2018-07-27 01:29:48.989806"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.4ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Steffanie Veum"], ["created_at", "2018-07-27 01:29:48.993367"], ["updated_at", "2018-07-27 01:29:48.993367"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.4ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Rogelio Wintheiser"], ["created_at", "2018-07-27 01:29:48.996758"], ["updated_at", "2018-07-27 01:29:48.996758"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.5ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Priscila Wisozk"], ["created_at", "2018-07-27 01:29:49.001228"], ["updated_at", "2018-07-27 01:29:49.001228"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.4ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Janett Hansen"], ["created_at", "2018-07-27 01:29:49.005218"], ["updated_at", "2018-07-27 01:29:49.005218"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.7ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Sarai Reinger"], ["created_at", "2018-07-27 01:29:49.009446"], ["updated_at", "2018-07-27 01:29:49.009446"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.4ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Armando Frami"], ["created_at", "2018-07-27 01:29:49.013723"], ["updated_at", "2018-07-27 01:29:49.013723"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.5ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Eliana Hamill II"], ["created_at", "2018-07-27 01:29:49.017573"], ["updated_at", "2018-07-27 01:29:49.017573"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.5ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Euna Dickinson"], ["created_at", "2018-07-27 01:29:49.021247"], ["updated_at", "2018-07-27 01:29:49.021247"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mAssembly Load (0.2ms)[0m  [1m[34mSELECT  "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mPart Load (0.2ms)[0m  [1m[34mSELECT  "parts".* FROM "parts" WHERE "parts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mAssemblyPart Create (0.7ms)[0m  [1m[32mINSERT INTO "assembly_parts" ("created_at", "updated_at", "assembly_id", "part_id") VALUES (?, ?, ?, ?)[0m  [["created_at", "2018-07-27 01:29:49.060346"], ["updated_at", "2018-07-27 01:29:49.060346"], ["assembly_id", 6], ["part_id", 7]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mAssembly Load (0.2ms)[0m  [1m[34mSELECT  "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mPart Load (0.1ms)[0m  [1m[34mSELECT  "parts".* FROM "parts" WHERE "parts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mAssemblyPart Create (0.6ms)[0m  [1m[32mINSERT INTO "assembly_parts" ("created_at", "updated_at", "assembly_id", "part_id") VALUES (?, ?, ?, ?)[0m  [["created_at", "2018-07-27 01:29:49.068331"], ["updated_at", "2018-07-27 01:29:49.068331"], ["assembly_id", 3], ["part_id", 8]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mAssembly Load (0.2ms)[0m  [1m[34mSELECT  "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mPart Load (0.1ms)[0m  [1m[34mSELECT  "parts".* FROM "parts" WHERE "parts"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mAssemblyPart Create (0.6ms)[0m  [1m[32mINSERT INTO "assembly_parts" ("created_at", "updated_at", "assembly_id", "part_id") VALUES (?, ?, ?, ?)[0m  [["created_at", "2018-07-27 01:29:49.075376"], ["updated_at", "2018-07-27 01:29:49.075376"], ["assembly_id", 5], ["part_id", 4]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mAssembly Load (0.2ms)[0m  [1m[34mSELECT  "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mPart Load (0.1ms)[0m  [1m[34mSELECT  "parts".* FROM "parts" WHERE "parts"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mAssemblyPart Create (0.6ms)[0m  [1m[32mINSERT INTO "assembly_parts" ("created_at", "updated_at", "assembly_id", "part_id") VALUES (?, ?, ?, ?)[0m  [["created_at", "2018-07-27 01:29:49.082366"], ["updated_at", "2018-07-27 01:29:49.082366"], ["assembly_id", 7], ["part_id", 10]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mAssembly Load (0.2ms)[0m  [1m[34mSELECT  "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mPart Load (0.1ms)[0m  [1m[34mSELECT  "parts".* FROM "parts" WHERE "parts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mAssemblyPart Create (2.1ms)[0m  [1m[32mINSERT INTO "assembly_parts" ("created_at", "updated_at", "assembly_id", "part_id") VALUES (?, ?, ?, ?)[0m  [["created_at", "2018-07-27 01:29:49.089563"], ["updated_at", "2018-07-27 01:29:49.089563"], ["assembly_id", 5], ["part_id", 8]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mAssembly Load (0.2ms)[0m  [1m[34mSELECT  "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mPart Load (0.2ms)[0m  [1m[34mSELECT  "parts".* FROM "parts" WHERE "parts"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mAssemblyPart Create (0.6ms)[0m  [1m[32mINSERT INTO "assembly_parts" ("created_at", "updated_at", "assembly_id", "part_id") VALUES (?, ?, ?, ?)[0m  [["created_at", "2018-07-27 01:29:49.100444"], ["updated_at", "2018-07-27 01:29:49.100444"], ["assembly_id", 3], ["part_id", 9]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mAssembly Load (0.4ms)[0m  [1m[34mSELECT  "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mPart Load (0.1ms)[0m  [1m[34mSELECT  "parts".* FROM "parts" WHERE "parts"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mAssemblyPart Create (0.5ms)[0m  [1m[32mINSERT INTO "assembly_parts" ("created_at", "updated_at", "assembly_id", "part_id") VALUES (?, ?, ?, ?)[0m  [["created_at", "2018-07-27 01:29:49.109804"], ["updated_at", "2018-07-27 01:29:49.109804"], ["assembly_id", 3], ["part_id", 10]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mAssembly Load (0.2ms)[0m  [1m[34mSELECT  "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = ? LIMIT ?[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mPart Load (0.1ms)[0m  [1m[34mSELECT  "parts".* FROM "parts" WHERE "parts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mAssemblyPart Create (0.5ms)[0m  [1m[32mINSERT INTO "assembly_parts" ("created_at", "updated_at", "assembly_id", "part_id") VALUES (?, ?, ?, ?)[0m  [["created_at", "2018-07-27 01:29:49.116111"], ["updated_at", "2018-07-27 01:29:49.116111"], ["assembly_id", 10], ["part_id", 7]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mAssembly Load (0.1ms)[0m  [1m[34mSELECT  "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mPart Load (0.1ms)[0m  [1m[34mSELECT  "parts".* FROM "parts" WHERE "parts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mAssemblyPart Create (0.5ms)[0m  [1m[32mINSERT INTO "assembly_parts" ("created_at", "updated_at", "assembly_id", "part_id") VALUES (?, ?, ?, ?)[0m  [["created_at", "2018-07-27 01:29:49.121434"], ["updated_at", "2018-07-27 01:29:49.121434"], ["assembly_id", 1], ["part_id", 2]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mAssembly Load (0.2ms)[0m  [1m[34mSELECT  "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mPart Load (0.1ms)[0m  [1m[34mSELECT  "parts".* FROM "parts" WHERE "parts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mAssemblyPart Create (0.6ms)[0m  [1m[32mINSERT INTO "assembly_parts" ("created_at", "updated_at", "assembly_id", "part_id") VALUES (?, ?, ?, ?)[0m  [["created_at", "2018-07-27 01:29:49.127761"], ["updated_at", "2018-07-27 01:29:49.127761"], ["assembly_id", 9], ["part_id", 5]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mPart Load (0.2ms)[0m  [1m[34mSELECT  "parts".* FROM "parts" ORDER BY "parts"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPart Load (0.2ms)[0m  [1m[34mSELECT  "parts".* FROM "parts" ORDER BY "parts"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAssembly Load (0.2ms)[0m  [1m[34mSELECT  "assemblies".* FROM "assemblies" ORDER BY "assemblies"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAssembly Load (0.2ms)[0m  [1m[34mSELECT  "assemblies".* FROM "assemblies" ORDER BY "assemblies"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPart Load (0.8ms)[0m  [1m[34mSELECT  "parts".* FROM "parts" INNER JOIN "assemblies_parts" ON "parts"."id" = "assemblies_parts"."part_id" WHERE "assemblies_parts"."assembly_id" = ? LIMIT ?[0m  [["assembly_id", 1], ["LIMIT", 11]]
+  [1m[36mPart Load (1.6ms)[0m  [1m[34mSELECT  "parts".* FROM "parts" INNER JOIN "assemblies_parts" ON "parts"."id" = "assemblies_parts"."part_id" WHERE "assemblies_parts"."assembly_id" = ? LIMIT ?[0m  [["assembly_id", 1], ["LIMIT", 11]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+Migrating to LinkPartsAssembly (20180727005715)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aassembly_parts" ("id" integer NOT NULL PRIMARY KEY, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "assembly_id" integer DEFAULT NULL, "part_id" integer DEFAULT NULL)[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aassembly_parts_on_part_id" ON "aassembly_parts" ("part_id")[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_aassembly_parts_on_assembly_id" ON "aassembly_parts" ("assembly_id")[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.7ms)[0m  [1m[32mINSERT INTO "aassembly_parts" ("id","created_at","updated_at","assembly_id","part_id")
+                     SELECT "id","created_at","updated_at","assembly_id","part_id" FROM "assembly_parts"[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (2.3ms)[0m  [1m[35mDROP TABLE "assembly_parts"[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TABLE "assembly_parts" ("id" integer NOT NULL PRIMARY KEY, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "assembly_id" integer DEFAULT NULL)[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_assembly_parts_on_assembly_id" ON "assembly_parts" ("assembly_id")[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "assembly_parts" ("id","created_at","updated_at","assembly_id")
+                     SELECT "id","created_at","updated_at","assembly_id" FROM "aassembly_parts"[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aassembly_parts"[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "aassembly_parts" ("id" integer NOT NULL PRIMARY KEY, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "assembly_id" integer DEFAULT NULL)[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "tindex_aassembly_parts_on_assembly_id" ON "aassembly_parts" ("assembly_id")[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "aassembly_parts" ("id","created_at","updated_at","assembly_id")
+                     SELECT "id","created_at","updated_at","assembly_id" FROM "assembly_parts"[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "assembly_parts"[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "assembly_parts" ("id" integer NOT NULL PRIMARY KEY, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "assembly_parts" ("id","created_at","updated_at")
+                     SELECT "id","created_at","updated_at" FROM "aassembly_parts"[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "aassembly_parts"[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[36mActiveRecord::SchemaMigration Destroy (1.0ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20180727005715"]]
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (4.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+Migrating to CreateAssemblyParts (20180727003933)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE "assembly_parts"[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20180727003933"]]
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+Migrating to CreateParts (20180727003741)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE "parts"[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20180727003741"]]
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+Migrating to CreateAssemblies (20180727003735)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE "assemblies"[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20180727003735"]]
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+Migrating to CreateAssemblies (20180727003735)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20180727003735_create_assemblies.rb:3
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "assemblies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "name" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180727003735_create_assemblies.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180727003735"]]
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+Migrating to CreateParts (20180727003741)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "parts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "part_number" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180727003741_create_parts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180727003741"]]
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+Migrating to CreateAssemblyParts (20180727003933)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "assembly_parts" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180727003933_create_assembly_parts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180727003933"]]
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+Migrating to CreateAssemblyParts (20180727003933)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE "assembly_parts"[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.4ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20180727003933"]]
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+Migrating to CreateAssemblyParts (20180727003933)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[31mrollback transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+Migrating to CreateAssemblyParts (20180727003933)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20180727003933_create_assembly_parts.rb:3
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "assemblies_parts" ("assembly_id" integer, "part_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180727003933_create_assembly_parts.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_assemblies_parts_on_assembly_id" ON "assemblies_parts" ("assembly_id")[0m
+  ↳ db/migrate/20180727003933_create_assembly_parts.rb:3
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_assemblies_parts_on_part_id" ON "assemblies_parts" ("part_id")[0m
+  ↳ db/migrate/20180727003933_create_assembly_parts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (1.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180727003933"]]
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[36mAssembly Load (0.3ms)[0m  [1m[34mSELECT  "assemblies".* FROM "assemblies" ORDER BY "assemblies"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAssembly Load (0.3ms)[0m  [1m[34mSELECT  "assemblies".* FROM "assemblies" ORDER BY "assemblies"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.7ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Michal Kozey"], ["created_at", "2018-07-27 02:21:52.635889"], ["updated_at", "2018-07-27 02:21:52.635889"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.5ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Herbert Nitzsche"], ["created_at", "2018-07-27 02:21:52.640992"], ["updated_at", "2018-07-27 02:21:52.640992"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.4ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Ms. Malik McClure"], ["created_at", "2018-07-27 02:21:52.644759"], ["updated_at", "2018-07-27 02:21:52.644759"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.5ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Darryl Beer"], ["created_at", "2018-07-27 02:21:52.648613"], ["updated_at", "2018-07-27 02:21:52.648613"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.5ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Doreatha Veum"], ["created_at", "2018-07-27 02:21:52.653519"], ["updated_at", "2018-07-27 02:21:52.653519"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.4ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Chantelle Johnson II"], ["created_at", "2018-07-27 02:21:52.658389"], ["updated_at", "2018-07-27 02:21:52.658389"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.6ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Pete Kiehn"], ["created_at", "2018-07-27 02:21:52.663440"], ["updated_at", "2018-07-27 02:21:52.663440"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.6ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Wilfred Torp"], ["created_at", "2018-07-27 02:21:52.668228"], ["updated_at", "2018-07-27 02:21:52.668228"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.6ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mao Cummings"], ["created_at", "2018-07-27 02:21:52.673305"], ["updated_at", "2018-07-27 02:21:52.673305"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.6ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Lanny Stokes"], ["created_at", "2018-07-27 02:21:52.677883"], ["updated_at", "2018-07-27 02:21:52.677883"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.7ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Adolfo Prosacco"], ["created_at", "2018-07-27 02:21:52.694002"], ["updated_at", "2018-07-27 02:21:52.694002"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.5ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Monty Luettgen"], ["created_at", "2018-07-27 02:21:52.700476"], ["updated_at", "2018-07-27 02:21:52.700476"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.5ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Johnathan Walsh"], ["created_at", "2018-07-27 02:21:52.704881"], ["updated_at", "2018-07-27 02:21:52.704881"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.5ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Dwayne Auer"], ["created_at", "2018-07-27 02:21:52.709561"], ["updated_at", "2018-07-27 02:21:52.709561"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.4ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Mr. Cody Marquardt"], ["created_at", "2018-07-27 02:21:52.713275"], ["updated_at", "2018-07-27 02:21:52.713275"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.4ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Ms. Aiko Kuhic"], ["created_at", "2018-07-27 02:21:52.716751"], ["updated_at", "2018-07-27 02:21:52.716751"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.4ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Tona D'Amore"], ["created_at", "2018-07-27 02:21:52.720707"], ["updated_at", "2018-07-27 02:21:52.720707"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.5ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Bert Schmitt"], ["created_at", "2018-07-27 02:21:52.724485"], ["updated_at", "2018-07-27 02:21:52.724485"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.4ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Mr. Theo Carroll"], ["created_at", "2018-07-27 02:21:52.728070"], ["updated_at", "2018-07-27 02:21:52.728070"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.5ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Ms. Rosalee Schinner"], ["created_at", "2018-07-27 02:21:52.731868"], ["updated_at", "2018-07-27 02:21:52.731868"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+Migrating to CreateAssemblyParts (20180727003933)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE "assemblies_parts"[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[36mActiveRecord::SchemaMigration Destroy (0.3ms)[0m  [1m[31mDELETE FROM "schema_migrations" WHERE "schema_migrations"."version" = ?[0m  [["version", "20180727003933"]]
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (2.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+Migrating to CreateAssemblyParts (20180727003933)
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20180727003933_create_assembly_parts.rb:3
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "assembly_parts" ("assembly_id" integer, "part_id" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20180727003933_create_assembly_parts.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_assembly_parts_on_assembly_id" ON "assembly_parts" ("assembly_id")[0m
+  ↳ db/migrate/20180727003933_create_assembly_parts.rb:3
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_assembly_parts_on_part_id" ON "assembly_parts" ("part_id")[0m
+  ↳ db/migrate/20180727003933_create_assembly_parts.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20180727003933"]]
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (3.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.6ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Greta Bahringer III"], ["created_at", "2018-07-27 02:23:46.861322"], ["updated_at", "2018-07-27 02:23:46.861322"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.4ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Dr. Antonia Bradtke"], ["created_at", "2018-07-27 02:23:46.865571"], ["updated_at", "2018-07-27 02:23:46.865571"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.4ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Maurice Sawayn"], ["created_at", "2018-07-27 02:23:46.869090"], ["updated_at", "2018-07-27 02:23:46.869090"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.8ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Mrs. Dion Rath"], ["created_at", "2018-07-27 02:23:46.872672"], ["updated_at", "2018-07-27 02:23:46.872672"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.5ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Nydia Little PhD"], ["created_at", "2018-07-27 02:23:46.878662"], ["updated_at", "2018-07-27 02:23:46.878662"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.6ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Andrew Lesch"], ["created_at", "2018-07-27 02:23:46.884163"], ["updated_at", "2018-07-27 02:23:46.884163"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.5ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Orville Reinger"], ["created_at", "2018-07-27 02:23:46.889137"], ["updated_at", "2018-07-27 02:23:46.889137"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.5ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Ulysses Stanton"], ["created_at", "2018-07-27 02:23:46.894246"], ["updated_at", "2018-07-27 02:23:46.894246"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.5ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Karey Altenwerth DVM"], ["created_at", "2018-07-27 02:23:46.899610"], ["updated_at", "2018-07-27 02:23:46.899610"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[36mAssembly Create (0.4ms)[0m  [1m[32mINSERT INTO "assemblies" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Letha Armstrong"], ["created_at", "2018-07-27 02:23:46.903536"], ["updated_at", "2018-07-27 02:23:46.903536"]]
+  ↳ db/seeds.rb:4
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:4
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.5ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Harland Kertzmann Jr."], ["created_at", "2018-07-27 02:23:46.918413"], ["updated_at", "2018-07-27 02:23:46.918413"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.4ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Maximina Conroy"], ["created_at", "2018-07-27 02:23:46.922305"], ["updated_at", "2018-07-27 02:23:46.922305"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.4ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Bulah Beahan"], ["created_at", "2018-07-27 02:23:46.925810"], ["updated_at", "2018-07-27 02:23:46.925810"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.4ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Mathew Smith"], ["created_at", "2018-07-27 02:23:46.929326"], ["updated_at", "2018-07-27 02:23:46.929326"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.4ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Keesha Nienow"], ["created_at", "2018-07-27 02:23:46.933393"], ["updated_at", "2018-07-27 02:23:46.933393"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.4ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Bernardine Hickle"], ["created_at", "2018-07-27 02:23:46.937281"], ["updated_at", "2018-07-27 02:23:46.937281"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.5ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Stefanie Halvorson"], ["created_at", "2018-07-27 02:23:46.941082"], ["updated_at", "2018-07-27 02:23:46.941082"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.5ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Dr. Shanice Braun"], ["created_at", "2018-07-27 02:23:46.945428"], ["updated_at", "2018-07-27 02:23:46.945428"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.4ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Ms. Anthony Wintheiser"], ["created_at", "2018-07-27 02:23:46.949145"], ["updated_at", "2018-07-27 02:23:46.949145"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[36mPart Create (0.5ms)[0m  [1m[32mINSERT INTO "parts" ("part_number", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["part_number", "Esteban Von"], ["created_at", "2018-07-27 02:23:46.952820"], ["updated_at", "2018-07-27 02:23:46.952820"]]
+  ↳ db/seeds.rb:8
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:8
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mAssembly Load (0.2ms)[0m  [1m[34mSELECT  "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mPart Load (0.1ms)[0m  [1m[34mSELECT  "parts".* FROM "parts" WHERE "parts"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mAssemblyPart Create (0.5ms)[0m  [1m[32mINSERT INTO "assembly_parts" ("assembly_id", "part_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["assembly_id", 7], ["part_id", 3], ["created_at", "2018-07-27 02:23:46.980816"], ["updated_at", "2018-07-27 02:23:46.980816"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mAssembly Load (0.1ms)[0m  [1m[34mSELECT  "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mPart Load (0.1ms)[0m  [1m[34mSELECT  "parts".* FROM "parts" WHERE "parts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mAssemblyPart Create (0.5ms)[0m  [1m[32mINSERT INTO "assembly_parts" ("assembly_id", "part_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["assembly_id", 1], ["part_id", 6], ["created_at", "2018-07-27 02:23:46.986544"], ["updated_at", "2018-07-27 02:23:46.986544"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mAssembly Load (0.1ms)[0m  [1m[34mSELECT  "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mPart Load (0.1ms)[0m  [1m[34mSELECT  "parts".* FROM "parts" WHERE "parts"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mAssemblyPart Create (0.5ms)[0m  [1m[32mINSERT INTO "assembly_parts" ("assembly_id", "part_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["assembly_id", 3], ["part_id", 8], ["created_at", "2018-07-27 02:23:46.992208"], ["updated_at", "2018-07-27 02:23:46.992208"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mAssembly Load (0.1ms)[0m  [1m[34mSELECT  "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mPart Load (0.1ms)[0m  [1m[34mSELECT  "parts".* FROM "parts" WHERE "parts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mAssemblyPart Create (0.4ms)[0m  [1m[32mINSERT INTO "assembly_parts" ("assembly_id", "part_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["assembly_id", 5], ["part_id", 7], ["created_at", "2018-07-27 02:23:46.997601"], ["updated_at", "2018-07-27 02:23:46.997601"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mAssembly Load (0.1ms)[0m  [1m[34mSELECT  "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = ? LIMIT ?[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mPart Load (0.1ms)[0m  [1m[34mSELECT  "parts".* FROM "parts" WHERE "parts"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mAssemblyPart Create (0.5ms)[0m  [1m[32mINSERT INTO "assembly_parts" ("assembly_id", "part_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["assembly_id", 9], ["part_id", 6], ["created_at", "2018-07-27 02:23:47.003229"], ["updated_at", "2018-07-27 02:23:47.003229"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mAssembly Load (0.1ms)[0m  [1m[34mSELECT  "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mPart Load (0.1ms)[0m  [1m[34mSELECT  "parts".* FROM "parts" WHERE "parts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mAssemblyPart Create (0.4ms)[0m  [1m[32mINSERT INTO "assembly_parts" ("assembly_id", "part_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["assembly_id", 2], ["part_id", 7], ["created_at", "2018-07-27 02:23:47.009281"], ["updated_at", "2018-07-27 02:23:47.009281"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mAssembly Load (0.1ms)[0m  [1m[34mSELECT  "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mPart Load (0.1ms)[0m  [1m[34mSELECT  "parts".* FROM "parts" WHERE "parts"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mAssemblyPart Create (0.5ms)[0m  [1m[32mINSERT INTO "assembly_parts" ("assembly_id", "part_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["assembly_id", 2], ["part_id", 2], ["created_at", "2018-07-27 02:23:47.015035"], ["updated_at", "2018-07-27 02:23:47.015035"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mAssembly Load (0.2ms)[0m  [1m[34mSELECT  "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = ? LIMIT ?[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mPart Load (0.1ms)[0m  [1m[34mSELECT  "parts".* FROM "parts" WHERE "parts"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mAssemblyPart Create (0.4ms)[0m  [1m[32mINSERT INTO "assembly_parts" ("assembly_id", "part_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["assembly_id", 8], ["part_id", 7], ["created_at", "2018-07-27 02:23:47.020598"], ["updated_at", "2018-07-27 02:23:47.020598"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mAssembly Load (0.1ms)[0m  [1m[34mSELECT  "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mPart Load (0.1ms)[0m  [1m[34mSELECT  "parts".* FROM "parts" WHERE "parts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mAssemblyPart Create (0.6ms)[0m  [1m[32mINSERT INTO "assembly_parts" ("assembly_id", "part_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["assembly_id", 7], ["part_id", 5], ["created_at", "2018-07-27 02:23:47.025874"], ["updated_at", "2018-07-27 02:23:47.025874"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mAssembly Load (0.1ms)[0m  [1m[34mSELECT  "assemblies".* FROM "assemblies" WHERE "assemblies"."id" = ? LIMIT ?[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mPart Load (0.1ms)[0m  [1m[34mSELECT  "parts".* FROM "parts" WHERE "parts"."id" = ? LIMIT ?[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ db/seeds.rb:12
+  [1m[36mAssemblyPart Create (0.4ms)[0m  [1m[32mINSERT INTO "assembly_parts" ("assembly_id", "part_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["assembly_id", 6], ["part_id", 5], ["created_at", "2018-07-27 02:23:47.031899"], ["updated_at", "2018-07-27 02:23:47.031899"]]
+  ↳ db/seeds.rb:12
+  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ db/seeds.rb:12
+  [1m[36mAssembly Load (0.3ms)[0m  [1m[34mSELECT  "assemblies".* FROM "assemblies" ORDER BY "assemblies"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mAssembly Load (0.2ms)[0m  [1m[34mSELECT  "assemblies".* FROM "assemblies" ORDER BY "assemblies"."id" ASC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPart Load (3.5ms)[0m  [1m[34mSELECT  "parts".* FROM "parts" INNER JOIN "assemblies_parts" ON "parts"."id" = "assemblies_parts"."part_id" WHERE "assemblies_parts"."assembly_id" = ? LIMIT ?[0m  [["assembly_id", 1], ["LIMIT", 11]]
+  [1m[36mPart Load (1.7ms)[0m  [1m[34mSELECT  "parts".* FROM "parts" INNER JOIN "assemblies_parts" ON "parts"."id" = "assemblies_parts"."part_id" WHERE "assemblies_parts"."assembly_id" = ? LIMIT ?[0m  [["assembly_id", 1], ["LIMIT", 11]]
+  [1m[36mPart Load (0.4ms)[0m  [1m[34mSELECT  "parts".* FROM "parts" ORDER BY "parts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[36mPart Load (0.3ms)[0m  [1m[34mSELECT  "parts".* FROM "parts" ORDER BY "parts"."id" DESC LIMIT ?[0m  [["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (2.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ /Users/linaahmed/.rvm/gems/ruby-2.5.1/gems/rake-12.3.1/lib/rake/task.rb:271
